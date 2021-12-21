@@ -9,6 +9,9 @@ Python
 - https://github.com/LyWangPX/Reinforcement-Learning-2nd-Edition-by-Sutton-Exercise-Solutions
 - https://github.com/ShangtongZhang/reinforcement-learning-an-introduction
 
+Matlab
+- https://waxworksmath.com/Authors/N_Z/Sutton/RLAI_1st_Edition/sutton.html
+
 Links to pdfs of the literature sources cited in the book https://drive.google.com/drive/folders/1V9jAShWpccLvByv5S1DuOzo6GVvzd4LV
 
 Course https://drive.google.com/drive/folders/0B3w765rOKuKANmxNbXdwaE1YU1k?resourcekey=0-JZz-noRuJgogNsg1ljgV8w
