@@ -21,3 +21,5 @@ https://yashbonde.github.io/blogs/bartosutton/chap2.html
 https://enjeeneer.io/posts/2021/04/notes-exercises-and-code-for-sutton-and-bartos-reinforcement-learning-an-introduction-2018/
 
 RL + evolution algorithm = ?
+
+Playing Atari with Deep Reinforcement Learning https://www.cs.toronto.edu/~vmnih/docs/dqn.pdf 
