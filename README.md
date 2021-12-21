@@ -19,3 +19,5 @@ https://marcinbogdanski.github.io/reinforcement-learning.html
 https://github.com/marcinbogdanski/rl-sketchpad
 https://yashbonde.github.io/blogs/bartosutton/chap2.html
 https://enjeeneer.io/posts/2021/04/notes-exercises-and-code-for-sutton-and-bartos-reinforcement-learning-an-introduction-2018/
+
+RL + evolution algorithm = ?
