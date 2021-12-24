@@ -26,3 +26,7 @@ https://enjeeneer.io/posts/2021/04/notes-exercises-and-code-for-sutton-and-barto
 RL + evolution algorithm = ?
 
 Playing Atari with Deep Reinforcement Learning https://www.cs.toronto.edu/~vmnih/docs/dqn.pdf 
+
+https://github.com/datamllab/awesome-game-ai
+https://github.com/SKTBrain/awesome-starcraftAI
+https://github.com/tigerneil/awesome-deep-rl
