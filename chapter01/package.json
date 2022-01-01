@@ -1,0 +1,16 @@
+{
+  "name": "chapter01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tic_tac_toe.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/typescript/bin/tsc tic_tac_toe.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tensorflow/tfjs-node": "^3.12.0",
+    "typescript": "^4.5.4"
+  }
+}
