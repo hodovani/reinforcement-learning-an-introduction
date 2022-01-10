@@ -1,4 +1,5 @@
 const {State} = require('./state.js');
+const tf = require('@tensorflow/tfjs-node');
 
 const BOARD_ROWS = 3;
 const BOARD_COLS = 3;
@@ -68,32 +69,29 @@ class Judge {
         }
     }
 
-    play(printState = false) {
-        const alternator = this.alternate()
-        this.reset()
-        const currentState = new State();
-        this.p1.setState(currentState)
-        this.p2.setState(currentState)
-        if (printState) {
-            currentState.printState();
-        }
-        while (true) {
-            const player = alternator.next().value;
-            const {position, symbol} = player.act();
-            if(position === undefined){
-                console.log('');
-            }
-            const newState = currentState.nextState(position.i, position.j, symbol)
-            player.setState(newState)
-            if (printState) {
-                newState.printState();
-            }
-            if (newState.isEnd()) {
-                return newState.winner
-            }
-            currentState.data = newState.data
-        }
-    }
+    // play({printState = false}) {
+    //     const alternator = this.alternate()
+    //     this.reset()
+    //     this.currentState = new State();
+    //     this.p1.setState(this.currentState)
+    //     this.p2.setState(this.currentState)
+    //     if (printState) {
+    //         this.currentState.printState();
+    //     }
+    //     while (true) {
+    //         const player = alternator.next().value;
+    //         const {position, symbol} = player.act();
+    //         const newState = this.currentState.nextState(position.i, position.j, symbol)
+    //         player.setState(newState)
+    //         if (printState) {
+    //             newState.printState();
+    //         }
+    //         if (newState.isEnd()) {
+    //             return newState.winner
+    //         }
+    //         this.currentState.data = tf.clone(newState.data);
+    //     }
+    // }
 }
 
 class Player {
@@ -157,7 +155,7 @@ class Player {
         }
 
         if (Math.random() < this.epsilon) {
-            const action = nextPositions[getRandomInt(0, nextPositions.length)];
+            const action = {position: nextPositions[getRandomInt(0, nextPositions.length)]};
             action.symbol = this.symbol;
             this.greedy[-1] = false;
             return action
@@ -174,7 +172,7 @@ class Player {
 
         values = values.sort((a, b) => b.estimate - a.estimate);
 
-        if(values[0] === undefined){
+        if(values[0] === undefined || values[0].position === undefined){
             console.log('');
         }
 
@@ -220,7 +218,7 @@ class HumanPlayer {
         const key = input("Input your position:")
         const data = this.keys.indexOf(key)
         const i = Math.floor(data / BOARD_COLS);
-        const j = data % BOARD_COLS
+        const j = data % BOARD_COLS;
         return {position: {i, j}, symbol: this.symbol}
     }
 }
@@ -232,7 +230,7 @@ function train(epochs, print_every_n = 500) {
     let player1_win = 0;
     let player2_win = 0;
     for (let i = 1; i < epochs + 1; i++) {
-        const winner = judge.play({print_state: false});
+        const winner = judge.play({printState: false});
         if (winner === 1) {
             player1_win++;
         }

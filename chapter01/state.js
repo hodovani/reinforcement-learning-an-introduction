@@ -42,7 +42,7 @@ class State {
 
         // check columns
         const columns = this.data.sum(1);
-        results.push(columns.arraySync());
+        results.push(...columns.arraySync());
 
         // check diagonals
         let trace = 0;
@@ -92,7 +92,7 @@ class State {
 
     // print the board
     printState() {
-        this.data.print();
+
     }
 }
 
